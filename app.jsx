@@ -16,7 +16,7 @@ function Button(props) {
 }
 
 function Question(props) {
-  return <h1 style={{ color: "red" }}>{props.question}</h1>;
+  return <h2 style={{ color: "grey" }}>{props.question}</h2>;
 }
 class Choices extends React.Component {
   constructor(props) {
@@ -41,17 +41,18 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      imagen:['img/1.jpg', 'img/2.jpg','img/3.jpg','img/4.jpg'],
       question: [
-        "What is 2+2?",
-        "what is 5+5?",
-        "what is 6+5?",
-        "what is 1+5?",
+        "Javascript is _________ language.",
+        "Which HTML attribute is used to define inline styles?",
+        "What does CSS stand for?",
+        "JavaScript is ______ Side Scripting",
       ],
-      options: [[1, 4, 3, 2], [10, 0, 0, 0], [11, 10, 0, 6], [11, 10, 0, 6]],
-      ans: [4, 10, 11, 6],
-      correct: 0,
-      incorrect: 0,
-      counter: 0
+      options: [["Programming", "Application", "Scripting"], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of These","Browser"]],
+      ans: ["Scripting", "style", "Cascading Style Sheets", "Browser"],
+      // correct: 0,
+      // incorrect: 0,
+      // counter: 0
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.reset = this.reset.bind(this);
@@ -103,15 +104,10 @@ class Main extends React.Component {
           clickHandler={this.clickHandler}
           counter={this.state.counter}
           />
+       
         {" "}<br />
-        <Choices
-          options={this.state.options[this.state.counter][3]}
-          clickHandler={this.clickHandler}
-          counter={this.state.counter}
-          />
-        {" "}<br />
-        <h1> Correct: {this.state.correct}</h1>
-        <h1> Incorrect: {this.state.incorrect} </h1>
+        {/* <h1> Correct: {this.state.correct}</h1>
+        <h1> Incorrect: {this.state.incorrect} </h1> */}
         <Button reset={this.reset} />
       </div> </center>
       : <center> <div>
