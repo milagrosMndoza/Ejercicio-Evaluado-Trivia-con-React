@@ -10,7 +10,7 @@ function Button(props) {
         props.reset();
       }}
       >
-      Reset
+      Try again
     </button>
   );
 }
@@ -48,7 +48,7 @@ class Main extends React.Component {
         "What does CSS stand for?",
         "JavaScript is ______ Side Scripting",
       ],
-      options: [["Programming", "Application", "Scripting"], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of These","Browser"]],
+      options: [["Programming", "Application", " Scripting "], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of","Browser"]],
       ans: ["Scripting", "style", "Cascading Style Sheets", "Browser"],
       // correct: 0,
       // incorrect: 0,
@@ -108,7 +108,7 @@ class Main extends React.Component {
         {" "}<br />
         {/* <h1> Correct: {this.state.correct}</h1>
         <h1> Incorrect: {this.state.incorrect} </h1> */}
-        <Button reset={this.reset} />
+        {/* <Button reset={this.reset} /> */}
       </div> </center>
       : <center> <div>
       <h1> Quiz Completed </h1>
