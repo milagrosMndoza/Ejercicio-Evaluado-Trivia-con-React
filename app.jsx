@@ -1,3 +1,6 @@
+function Question(props) {
+  return <h2 style={{ color: "grey" }}>{props.question}</h2>;
+}
 function Button(props) {
   return (
     <button
@@ -15,9 +18,6 @@ function Button(props) {
   );
 }
 
-function Question(props) {
-  return <h2 style={{ color: "grey" }}>{props.question}</h2>;
-}
 class Choices extends React.Component {
   constructor(props) {
     super(props);
@@ -48,17 +48,17 @@ class Main extends React.Component {
         "What does CSS stand for?",
         "JavaScript is ______ Side Scripting",
       ],
-      options: [["Programming", "Application", " Scripting "], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of","Browser"]],
+      options: [["Programming", "Application", "Scripting"], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of","Browser"]],
       ans: ["Scripting", "style", "Cascading Style Sheets", "Browser"],
-      // correct: 0,
-      // incorrect: 0,
-      // counter: 0
+      correct: 0,
+      incorrect: 0,
+      counter: 0
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.reset = this.reset.bind(this);
   }
   clickHandler(ans, counter) {
-    if (ans == this.state.ans[this.state.counter]) {
+    if (ans == this.state.ans[this.state.counter.imagen]) {
       this.setState((prevState, props) => {
         return {
           correct: prevState.correct + 1,
@@ -74,6 +74,8 @@ class Main extends React.Component {
       });
     }
   }
+
+
   reset() {
     this.setState({ counter: 0, correct: 0, incorrect: 0 });
   }
@@ -104,11 +106,11 @@ class Main extends React.Component {
           clickHandler={this.clickHandler}
           counter={this.state.counter}
           />
-       
+{/*        
         {" "}<br />
-        {/* <h1> Correct: {this.state.correct}</h1>
-        <h1> Incorrect: {this.state.incorrect} </h1> */}
-        {/* <Button reset={this.reset} /> */}
+        {<h1> Correct: {this.state.correct}</h1>}
+        {<h1> Incorrect: {this.state.incorrect} </h1>}
+        {<Button reset={this.reset} />} */}
       </div> </center>
       : <center> <div>
       <h1> Quiz Completed </h1>
