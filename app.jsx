@@ -1,6 +1,9 @@
+// para el titulo de la pregunta
 function Question(props) {
   return <h2 style={{ color: "grey" }}>{props.question}</h2>;
 }
+
+// creando mi boton try again
 function Button(props) {
   return (
     <button
@@ -48,7 +51,8 @@ class Main extends React.Component {
         "What does CSS stand for?",
         "JavaScript is ______ Side Scripting",
       ],
-      options: [["Programming", "Application", "Scripting"], ["font", "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of","Browser"]],
+      options: [["Programming", "Application", "Scripting"], ["font", 
+      "class", "style"], ["Cascading Style Sheets","Colorful Style Sheets", "Creative Style Sheets"], ["Server", "None of","Browser"]],
       ans: ["Scripting", "style", "Cascading Style Sheets", "Browser"],
       correct: 0,
       incorrect: 0,
@@ -58,7 +62,7 @@ class Main extends React.Component {
     this.reset = this.reset.bind(this);
   }
   clickHandler(ans, counter) {
-    if (ans == this.state.ans[this.state.counter.imagen]) {
+    if (ans == this.state.ans[this.state.counter]) {
       this.setState((prevState, props) => {
         return {
           correct: prevState.correct + 1,
@@ -85,6 +89,7 @@ class Main extends React.Component {
       ? <center> 
         <div>
         <Question
+          imgen={this.state.imagen}
           correct={this.state.correct}
           question={this.state.question[this.state.counter]}
           counter={this.state.counter}
